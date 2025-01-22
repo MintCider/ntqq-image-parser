@@ -139,7 +139,7 @@ async def request_llm(url: str, api_key: str, prompt: list, request_body: dict):
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                           detail="AI processing failed")
 
-@app.post("/analyze")
+@app.post("/")
 async def analyze_image(request: Request, image_req: ImageRequest):
     """Analyze image endpoint"""
     config = request.app.state.config
